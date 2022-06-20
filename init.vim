@@ -42,6 +42,9 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'}
 " config for Neovim's built-in language server client
 Plug 'neovim/nvim-lspconfig'
 
+" auto completion plugin
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 " c and c++
 " TODO:
 
@@ -56,6 +59,9 @@ call plug#end()
 
 " Required by rust.vim
 filetype plugin indent on
+
+" completion
+let g:deoplete#enable_at_startup = 1
 
 " Encoding
 set encoding=utf-8
