@@ -218,8 +218,8 @@ noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
 " Tabs
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
+" nnoremap <Tab> gt
+" nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
 
 " Set working directory
@@ -367,6 +367,9 @@ augroup go
   au FileType go imap <C-g> <esc>:<C-u>GoDecls<cr>
   au FileType go imap <leader>dr <esc>:<C-u>GoDeclsDir<cr>
   au FileType go nmap <leader>rb :<C-u>call <SID>build_go_files()<CR>
+
+  au FileType go nmap gi :GoImplements<cr>
+  au FileType go nmap gr :GoReferrers<cr>
 
 augroup END
 
