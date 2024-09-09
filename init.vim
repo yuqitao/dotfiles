@@ -20,6 +20,9 @@ Plug 'vim-airline/vim-airline-themes'
 " shows a git diff in the sign column
 Plug 'airblade/vim-gitgutter'
 
+" the premier Vim plugin for Git
+Plug 'tpope/vim-fugitive'
+
 " a class outline viewer for vim
 Plug 'majutsushi/tagbar'
 
@@ -230,6 +233,11 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" vim-fugitive
+if exists("*fugitive#statusline")
+  set statusline+=%{fugitive#statusline()}
+endif
 
 " fzf.vim
 set wildmode=list:longest,list:full
